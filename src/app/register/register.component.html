@@ -11,7 +11,7 @@
 
     <div class="form-group">
       <input id="password" type="password" class="form-control" name="password" placeholder="Password" minlength="6"
-             maxlength="10" required
+             maxlength="10" oninput="check(this)" required
              #password="ngModel"
              [(ngModel)]="model.password">
       <div class="alert" *ngIf="password.invalid && (password.dirty || password.touched)">Password is reguired</div>
@@ -19,12 +19,12 @@
 
     <div class="form-group">
       <input id="confirmPassword" type="password" class="form-control" name="confirmPassword"
-             placeholder="Confirm Password" required
+             placeholder="Confirm Password" oninput="check(this)" required
              #confirmPassword="ngModel"
              [(ngModel)]="model.confirmPassword">
       <div class="alert"
-           *ngIf="confirmPassword.invalid && (confirmPassword.dirty || password.touched || confirmPassword ==! password)">
-        Confirmation does not match password
+           *ngIf="confirmPassword.invalid && (confirmPassword.dirty || confirmPassword.touched)">
+        <div class="registrationFormAlert" id="divCheckPasswordMatch">Confirmation does not match password</div>
       </div>
     </div>
 
@@ -37,4 +37,17 @@
   </form>
   <p>{{diagnostic}}</p>
 
+  <p class="txtpass">Изменить пароль:</p><input name='password' id='pass1'  class='edinfopass' type='password'><span id="validpass"></span>
+  <p class="txtpass">Повторите пароль:</p><input name='passwordtrue' id='pass2'    class='edinfopass' type='password'>
+
+<!--  <script language='javascript' type='text/javascript'>-->
+<!--    function check(input) {-->
+<!--      if (document.getElementById('confirmPassword').value !=-->
+<!--        document.getElementById('password').value) {-->
+<!--        input.setCustomValidity('Password Must be Matching.');-->
+<!--      } else {-->
+<!--        input.setCustomValidity('');-->
+<!--      }-->
+<!--    }-->
+<!--  </script>-->
 </div>

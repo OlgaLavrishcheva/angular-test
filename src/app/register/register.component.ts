@@ -12,12 +12,33 @@ export class RegisterComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    // function validateForm() {
+    //   var a = document.getElementById("password");
+    //   var b = document.getElementById("confirmPassword");
+    //
+    //   if (a != b) {
+    //     console.log("passwords are not matching");
+    //     return false;
+    //   }
+    //   return true;
+    // }
+    // validateForm();
   }
 
   get diagnostic(): string {
     return JSON.stringify(this.model);
   }
-
-  //тут должна быть функция для сравнения паролей
-
 }
+
+
+// function checkPasswordMatch() {
+//   var password = password.value;
+//   var confirmPassword = confirmPassword.value;
+//
+//   if (password != confirmPassword)
+//     $("#divCheckPasswordMatch").html("Confirmation does not match password")
+// }
+//
+// $(document).ready(function () {
+//   $("#password, #confirmPassword").keyup(checkPasswordMatch);
+// });
